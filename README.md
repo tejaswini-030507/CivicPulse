@@ -1,20 +1,26 @@
-# CivicPulse — Connecting Needs with Action
+**CivicPulse - Connecting Needs with Action**
 
-## Live Deployment — Firebase Hosting
+Built for H2S × Google for Developers Hackathon 2026 — Smart Resource Allocation
 
-Step 1: Install Firebase CLI
-npm install -g firebase-tools
+What is CivicPulse?
 
-Step 2: Login to Firebase
-firebase login
+CivicPulse is an AI-powered volunteer coordination platform that connects NGOs, volunteers, and researchers in one place. NGOs post community needs, volunteers discover and apply for tasks, and researchers analyse humanitarian data — all powered by Google Gemini AI.
 
-Step 3: Build the app
-npm run build
+Live Demo:
 
-Step 4: Deploy
-firebase deploy --only hosting
+App Link: https://PASTE-YOUR-FIREBASE-URL-HERE.web.app
 
-Your live URL will be: https://YOUR_PROJECT_ID.web.app
+Demo Video:
 
-To redeploy after changes:
-npm run build && firebase deploy --only hosting
+https://PASTE-YOUR-YOUTUBE-LINK-HERE
+
+Google Technologies Used
+
+- Google Gemini 1.5 Flash API — AI features
+- Firebase Authentication — login and registration
+- Cloud Firestore — database
+- Firebase Hosting — cloud deployment
+
+Team Name: Team Auxillo  
+Leader: Tejaswini N  
+Problem Statement: Smart Resource Allocation
