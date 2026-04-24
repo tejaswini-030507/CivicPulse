@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1A6B5A;
+  --color-accent: #F4A026;
+  --color-critical: #E03E3E;
+  --color-background: #F7F8FA;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #1C1C1E;
+  --color-text-muted: #6B7280;
+  
+  --color-severity-critical: #E03E3E;
+  --color-severity-high: #F97316;
+  --color-severity-moderate: #FACC15;
+  --color-severity-low: #22C55E;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-primary;
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user of the platform (NGO, Volunteer, or Researcher).",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "role": { "type": "string", "enum": ["NGO", "Volunteer", "Researcher"] },
+        "location": { "type": "string" },
+        "skills": { "type": "array", "items": { "type": "string" } },
+        "availability": { "type": "string" },
+        "reputationScore": { "type": "number" },
+        "badges": { "type": "array", "items": { "type": "object" } }
+      },
+      "required": ["name", "email", "role"]
+    },
+    "Need": {
+      "title": "Need",
+      "description": "A humanitarian need raised by an NGO.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "location": {
+          "type": "object",
+          "properties": {
+            "city": { "type": "string" },
+            "state": { "type": "string" },
+            "country": { "type": "string" },
+            "lat": { "type": "number" },
+            "lng": { "type": "number" }
+          }
+        },
+        "urgency": { "type": "string", "enum": ["Critical", "High", "Moderate", "Low"] },
+        "volunteersNeeded": { "type": "number" },
+        "skillsRequired": { "type": "array", "items": { "type": "string" } },
+        "deadline": { "type": "string", "format": "date-time" },
+        "remote": { "type": "boolean" },
+        "status": { "type": "string", "enum": ["Open", "In Progress", "Fulfilled"] },
+        "ngoId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "volunteersAssigned": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["title", "category", "urgency", "ngoId"]
+    },
+    "ExpressionOfInterest": {
+      "title": "Expression of Interest",
+      "description": "A volunteer expressing interest in a need.",
+      "type": "object",
+      "properties": {
+        "volunteerId": { "type": "string" },
+        "needId": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "status": { "type": "string", "enum": ["Pending", "Accepted", "Rejected"] }
+      },
+      "required": ["volunteerId", "needId"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "A chat message between users.",
+      "type": "object",
+      "properties": {
+        "senderId": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["senderId", "text"]
+    },
+    "Certificate": {
+      "title": "Certificate",
+      "description": "A certificate issued to a volunteer.",
+      "type": "object",
+      "properties": {
+        "volunteerId": { "type": "string" },
+        "ngoId": { "type": "string" },
+        "taskId": { "type": "string" },
+        "note": { "type": "string" },
+        "issuedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["volunteerId", "ngoId", "taskId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": { "schema": "User", "description": "User profiles" },
+    "/needs/{needId}": { "schema": "Need", "description": "Humanitarian needs" },
+    "/expressions_of_interest/{docId}": { "schema": "ExpressionOfInterest", "description": "Volunteer interests" },
+    "/messages/{conversationId}/messages/{msgId}": { "schema": "Message", "description": "Chat messages" },
+    "/certificates/{certId}": { "schema": "Certificate", "description": "Issued certificates" }
+  }
+}

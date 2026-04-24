@@ -1,11 +1,20 @@
-<div align="center">
+# CivicPulse — Connecting Needs with Action
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+## Live Deployment — Firebase Hosting
 
-  <h1>Built with AI Studio</h2>
+Step 1: Install Firebase CLI
+npm install -g firebase-tools
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+Step 2: Login to Firebase
+firebase login
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+Step 3: Build the app
+npm run build
 
-</div>
+Step 4: Deploy
+firebase deploy --only hosting
+
+Your live URL will be: https://YOUR_PROJECT_ID.web.app
+
+To redeploy after changes:
+npm run build && firebase deploy --only hosting
