@@ -8,7 +8,7 @@ CivicPulse is an AI-powered volunteer coordination platform that connects NGOs, 
 
 Live Demo:
 
-App Link: https://PASTE-YOUR-FIREBASE-URL-HERE.web.app
+App Link: https://ai.studio/apps/c36f7ac0-122e-449c-868d-c70329994ed6?fullscreenApplet=true
 
 Demo Video:
 
